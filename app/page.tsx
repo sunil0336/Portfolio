@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -35,8 +36,8 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <button className="px-6 py-2 border rounded">View Project</button>
-          <button className="px-6 py-2 border rounded">Contact Me</button>
+          <button className="px-6 py-2 border rounded"><Link href="/projects">View Project </Link></button>
+          <button className="px-6 py-2 border rounded"><Link href='/contact'> Contact Me </Link></button>
         </motion.div>
       </section>
     </>
