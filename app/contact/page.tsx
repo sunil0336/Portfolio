@@ -1,56 +1,139 @@
-export default function Page() {
+"use client";
+
+import { useState } from "react";
+
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState<Partial<FormData>>({});
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const validate = () => {
+    const newErrors: Partial<FormData> = {};
+
+    if (!formData.name) newErrors.name = "Name is required";
+    if (!formData.email || !formData.email.includes("@"))
+      newErrors.email = "Valid email is required";
+    if (!formData.message || formData.message.length < 10)
+      newErrors.message = "Message must be at least 10 characters";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    setLoading(true);
+    setStatus("idle");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
   return (
     <section className="min-h-screen max-w-xl mx-auto px-4 flex flex-col justify-center space-y-8">
-      <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold">Contact</h1>
-        <p className="text-gray-600 dark:text-gray-300">
-          Feel free to reach out for collaborations or opportunities.
-        </p>
-      </div>
+      <h1 className="text-3xl font-bold text-center">Contact</h1>
 
-      <form className="space-y-6">
-        <div className="space-y-1">
-          <label htmlFor="name" className="text-sm font-medium">
-            Name
-          </label>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
           <input
-            id="name"
-            type="text"
+            name="name"
             placeholder="Your name"
+            value={formData.name}
+            onChange={handleChange}
             className="w-full border rounded px-3 py-2"
           />
+          {errors.name && (
+            <p className="text-sm text-red-500">{errors.name}</p>
+          )}
         </div>
 
-        <div className="space-y-1">
-          <label htmlFor="email" className="text-sm font-medium">
-            Email
-          </label>
+        <div>
           <input
-            id="email"
+            name="email"
             type="email"
             placeholder="you@example.com"
+            value={formData.email}
+            onChange={handleChange}
             className="w-full border rounded px-3 py-2"
           />
+          {errors.email && (
+            <p className="text-sm text-red-500">{errors.email}</p>
+          )}
         </div>
 
-        <div className="space-y-1">
-          <label htmlFor="message" className="text-sm font-medium">
-            Message
-          </label>
+        <div>
           <textarea
-            id="message"
+            name="message"
             rows={5}
             placeholder="Your message..."
+            value={formData.message}
+            onChange={handleChange}
             className="w-full border rounded px-3 py-2"
           />
+          {errors.message && (
+            <p className="text-sm text-red-500">{errors.message}</p>
+          )}
         </div>
 
         <button
-          type="button"
+          type="submit"
           className="w-full border rounded py-2 font-medium"
+          disabled={loading}
         >
-          Send Message
+          {loading ? "Submitting..." : "Send Message"}
         </button>
+
+        {status === "success" && (
+          <p className="text-green-600 text-sm mt-2">
+            Message sent successfully.
+          </p>
+        )}
+
+        {status === "error" && (
+          <p className="text-red-600 text-sm mt-2">
+            Something went wrong. Please try again.
+          </p>
+        )}
+
       </form>
     </section>
   );
