@@ -20,57 +20,53 @@ export default function ProjectCard({
   live,
 }: ProjectCardProps) {
   return (
-    <motion.div
-      className="border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-      whileHover={{ scale: 1.02 }}
-    >
-      <Image
-        src={imageUrl}
-        alt={title}
-        width={600}
-        height={400}
-        className="object-cover"
-      />
+<div className="rounded-xl border p-5 shadow-sm hover:shadow-lg hover:-translate-y-[2px] transition">
+      
+      {imageUrl && (
+        <img
+          src={imageUrl}
+          alt={title}
+          className="w-full h-40 object-cover rounded mb-3"
+        />
+      )}
 
-      <div className="p-4 space-y-4">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-sm text-gray-600 dark:text-gray-300">
-          {description}
-        </p>
+      <h3 className="font-semibold text-lg">{title}</h3>
+      <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+        {description}
+      </p>
 
-        <ul className="flex flex-wrap gap-2 text-xs">
-          {techStack.map((tech) => (
-            <li key={tech} className="px-2 py-1 border rounded">
-              {tech}
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex gap-4">
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm underline"
+      {/* Tech Stack Badges */}
+      <div className="flex flex-wrap gap-2 mt-3">
+        {techStack.map((tech) => (
+          <span
+            key={tech}
+            className="px-2 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700"
           >
-            GitHub
-          </a>
-
-          {live && (
-            <a
-              href={live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm underline"
-            >
-              Live Demo
-            </a>
-          )}
-        </div>
+            {tech}
+          </span>
+        ))}
       </div>
-    </motion.div>
+
+      {/* Action Buttons */}
+      <div className="flex gap-3 mt-4">
+        <a
+          href={github}
+          target="_blank"
+          className="px-3 py-1 text-sm border rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
+          GitHub
+        </a>
+
+        {live && (
+          <a
+            href={live}
+            target="_blank"
+            className="px-3 py-1 text-sm border rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+          >
+            Live Demo
+          </a>
+        )}
+      </div>
+    </div>
   );
 }

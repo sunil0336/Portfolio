@@ -36,8 +36,20 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <button className="px-6 py-2 border rounded"><Link href="/projects">View Project </Link></button>
-          <button className="px-6 py-2 border rounded"><Link href='/contact'> Contact Me </Link></button>
+          <Link
+            href="/projects"
+            className="px-6 py-2 border rounded inline-block hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+          >
+            View Projects
+          </Link>
+
+          <Link
+            href="/contact"
+            className="px-6 py-2 border rounded inline-block hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+          >
+            Contact Me
+          </Link>
+
         </motion.div>
       </section>
     </>
