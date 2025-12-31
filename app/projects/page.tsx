@@ -1,5 +1,6 @@
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
+import Reveal from "../components/Reveal";
 
 export default function ProjectsPage() {
   return (
@@ -8,7 +9,9 @@ export default function ProjectsPage() {
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+          <Reveal key={project.title}>
+            <ProjectCard key={project.title} {...project} />
+          </Reveal>
         ))}
       </div>
     </section>

@@ -20,8 +20,26 @@ export default function ProjectCard({
   live,
 }: ProjectCardProps) {
   return (
-<div className="rounded-xl border p-5 shadow-sm hover:shadow-lg hover:-translate-y-[2px] transition">
-      
+    <div
+      className="
+    group p-3
+    relative overflow-hidden
+    rounded-xl border
+    bg-white dark:bg-gray-900
+    border-gray-300 dark:border-gray-700
+
+    shadow-sm
+    hover:shadow-lg
+    hover:border-blue-400 dark:hover:border-blue-500
+
+    hover:scale-[1.01]
+    hover:-translate-y-[3px]
+    transition-all duration-300
+  "
+    >
+
+
+
       {imageUrl && (
         <img
           src={imageUrl}
@@ -40,7 +58,12 @@ export default function ProjectCard({
         {techStack.map((tech) => (
           <span
             key={tech}
-            className="px-2 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700"
+            className="
+              px-2.5 py-1 text-xs rounded-full
+              border border-gray-300 dark:border-gray-700
+              bg-gray-100 text-gray-800
+              dark:bg-gray-800 dark:text-gray-200
+            "
           >
             {tech}
           </span>
@@ -52,7 +75,12 @@ export default function ProjectCard({
         <a
           href={github}
           target="_blank"
-          className="px-3 py-1 text-sm border rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+          className="
+      px-3 py-1.5 text-sm rounded-md
+      border border-gray-300 dark:border-gray-700
+      hover:bg-gray-100 dark:hover:bg-gray-800
+      transition
+    "
         >
           GitHub
         </a>
@@ -61,12 +89,37 @@ export default function ProjectCard({
           <a
             href={live}
             target="_blank"
-            className="px-3 py-1 text-sm border rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="
+        px-3 py-1.5 text-sm rounded-md
+        bg-blue-600 text-white
+        hover:bg-blue-700
+        dark:bg-blue-500 dark:hover:bg-blue-600
+        transition
+      "
           >
             Live Demo
           </a>
         )}
       </div>
+
+      <span
+        className="
+          pointer-events-none
+          absolute inset-0
+          opacity-0
+          group-hover:opacity-100
+          transition-all duration-500 ease-out
+
+          bg-gradient-to-r
+          from-transparent via-white/25 to-transparent
+          dark:via-white/10
+
+          -translate-x-[140%]
+          group-hover:translate-x-[140%]
+        "
+      ></span>
+
+
     </div>
   );
 }

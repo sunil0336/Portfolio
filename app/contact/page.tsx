@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import SocialLinks from "../components/SocialLinks";
+import Reveal from "../components/Reveal";
 
 type FormData = {
   name: string;
@@ -70,8 +72,11 @@ export default function ContactPage() {
 
   return (
     <section className="min-h-screen max-w-xl mx-auto px-4 flex flex-col justify-center space-y-8">
+      <Reveal>
       <h1 className="text-3xl font-bold text-center">Contact</h1>
-
+      </Reveal>
+      
+      <Reveal>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <input
@@ -135,6 +140,10 @@ export default function ContactPage() {
         )}
 
       </form>
+      </Reveal>
+      <div className="flex justify-center">
+        <SocialLinks size="lg" />
+      </div>
     </section>
   );
 }

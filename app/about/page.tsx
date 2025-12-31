@@ -1,5 +1,6 @@
 "use client"
 import { motion } from "framer-motion";
+import Reveal from "../components/Reveal";
 
 
 export default function AboutPage() {
@@ -7,11 +8,14 @@ export default function AboutPage() {
     <section className="max-w-4xl mx-auto px-4 py-12 space-y-12">
 
       {/* Page Title */}
-      <h1 className="text-3xl font-bold">About Me</h1>
+      <Reveal>
+        <h1 className="text-3xl font-bold">About Me</h1>
+      </Reveal>
 
       {/* Intro */}
       <div className="space-y-3">
         <h2 className="text-xl font-semibold">Who I Am</h2>
+        <Reveal>
         <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
           I’m Sunil Rathod — a Full Stack Developer and M.Sc. Computer Science
           student at Fergusson College, Pune. I focus on building scalable and
@@ -19,6 +23,7 @@ export default function AboutPage() {
           modern JavaScript technologies. I enjoy solving real-world problems,
           working with APIs, and writing clean, maintainable code.
         </p>
+        </Reveal>
       </div>
 
       {/* Skills */}
