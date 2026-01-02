@@ -77,6 +77,19 @@ export default function Home() {
         >
           Contact Me
         </a>
+
+        <a
+          href="https://drive.google.com/file/d/1YVfj7Rjf13dtsSzsl3OG42bLTKllHEPn/view?usp=drive_link"
+          target="_blank"
+          className="
+            px-5 py-2 rounded-full
+            border border-gray-300 dark:border-gray-700
+            hover:bg-gray-100 dark:hover:bg-gray-800
+            transition
+          "
+        >
+          Resume
+        </a>
       </div>
     </section>
   );

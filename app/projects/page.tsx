@@ -2,6 +2,11 @@ import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import Reveal from "../components/Reveal";
 
+export const metadata = {
+  title: "Projects — Sunil Rathod",
+  description: "Featured MERN Stack and Full Stack development projects.",
+};
+
 export default function ProjectsPage() {
   return (
     <section className="max-w-5xl mx-auto px-4 py-10">

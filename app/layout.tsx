@@ -16,31 +16,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sunil Rathod — Full Stack Developer",
+  title: "Sunil Rathod — Full Stack / MERN Developer",
   description:
-    "Full Stack Developer specializing in React, Next.js, Node.js, and PostgreSQL. Building scalable and production-ready web applications.",
-  keywords: [
-    "Sunil Rathod",
-    "Full Stack Developer",
-    "React Developer",
-    "Next.js Developer",
-    "Portfolio"
-  ],
+    "Full Stack Developer specializing in React, Next.js, Express.js and MongoDB. Passionate about building scalable, user-focused web applications.",
   openGraph: {
-    title: "Sunil Rathod — Full Stack Developer",
+    title: "Sunil Rathod — Full Stack / MERN Developer",
     description:
-      "Portfolio of Sunil Rathod — showcasing modern web applications and projects.",
-    url: "https://your-portfolio-url.com",
-    images: ["/og-image.png"],
+      "Full Stack Developer specializing in React, Next.js, Express.js and MongoDB.",
+    url: "https://sunilrathod.vercel.app/",
+    siteName: "Sunil Rathod Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sunil Rathod Portfolio",
+      },
+    ],
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sunil Rathod — Full Stack Developer",
-    description: "React & Next.js Developer Portfolio",
+    title: "Sunil Rathod — Full Stack / MERN Developer",
+    description:
+      "Full Stack Developer specializing in React, Next.js, Express.js and MongoDB.",
     images: ["/og-image.png"],
   },
-  
 };
+
 
 export default function RootLayout({
   children,

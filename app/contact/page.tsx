@@ -4,6 +4,11 @@ import { useState } from "react";
 import SocialLinks from "../components/SocialLinks";
 import Reveal from "../components/Reveal";
 
+export const metadata = {
+  title: "Contact — Sunil Rathod",
+  description: "Get in touch for opportunities, collaboration, or project discussions.",
+};
+
 type FormData = {
   name: string;
   email: string;
