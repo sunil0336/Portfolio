@@ -57,7 +57,7 @@ export default function SocialLinks({ size = "md" }: Props) {
             flex items-center justify-center rounded-full border
             bg-white dark:bg-gray-900 dark:border-gray-700
             hover:bg-blue-50 dark:hover:bg-blue-900/30
-            hover:text-blue-600 dark:hover:text-blue-400
+            hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300
             transition ${base}
           `}
           title={s.label}

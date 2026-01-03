@@ -84,7 +84,7 @@ export default function ContactPage() {
             placeholder="Your name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full border rounded px-3 py-2"
+            className="w-full border rounded px-3 py-2 "
           />
           {errors.name && (
             <p className="text-sm text-red-500">{errors.name}</p>
