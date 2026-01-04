@@ -8,7 +8,7 @@ import { Typewriter } from "react-simple-typewriter";
 export default function Home() {
 
   return (
-    <section className="min-h-[75vh] max-w-4xl mx-auto px-4 flex flex-col justify-center space-y-6">
+    <main className="min-h-[75vh] max-w-4xl mx-auto px-4 flex flex-col justify-center space-y-6">
 
       <h1 className="text-4xl md:text-5xl font-bold leading-tight">
         Hi, I’m <span className="text-blue-600 dark:text-blue-400">Sunil Rathod</span>
@@ -91,7 +91,7 @@ export default function Home() {
           Resume
         </a>
       </div>
-    </section>
+    </main>
   );
 }
 

@@ -29,7 +29,7 @@ export default function Footer() {
             
         </div>
 
-        <p className="text-xs opacity-70">
+        <p className="text-xs text-gray-700 dark:text-gray-300">
           © {new Date().getFullYear()} Sunil Rathod — Portfolio
         </p>
       </div>

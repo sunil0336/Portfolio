@@ -22,38 +22,38 @@ export default function ProjectCard({
   return (
     <div
       className="
-    group p-3
-    relative overflow-hidden
-    rounded-xl border
-    bg-white dark:bg-gray-900
-    border-gray-300 dark:border-gray-700
+        group p-3
+        relative overflow-hidden
+        rounded-xl border
+        bg-white dark:bg-gray-900
+        border-gray-300 dark:border-gray-700
 
-    shadow-sm
-    hover:shadow-lg
-    hover:border-blue-400 dark:hover:border-blue-500
+        shadow-sm
+        hover:shadow-lg
+        hover:border-blue-400 dark:hover:border-blue-500
 
-    hover:scale-[1.01]
-    hover:-translate-y-[3px]
-    transition-all duration-300
-  "
-    >
-
-
+        hover:scale-[1.01]
+        hover:-translate-y-[3px]
+        transition-all duration-300
+      "
+      >
 
       {imageUrl && (
-        <img
+        <Image
           src={imageUrl}
           alt={title}
-          className="w-full h-40 object-cover rounded mb-3"
+          width={600}
+          height={350}
+          className="w-full rounded-lg object-cover"
+          loading="lazy"
         />
       )}
 
       <h3 className="font-semibold text-lg">{title}</h3>
-      <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+      <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
         {description}
       </p>
 
-      {/* Tech Stack Badges */}
       <div className="flex flex-wrap gap-2 mt-3">
         {techStack.map((tech) => (
           <span
@@ -70,18 +70,17 @@ export default function ProjectCard({
         ))}
       </div>
 
-      {/* Action Buttons */}
       <div className="flex gap-3 mt-4">
         <a
           href={github}
           target="_blank"
           className="
-      px-3 py-1.5 text-sm rounded-md
-      border border-gray-300 dark:border-gray-700
-      hover:bg-gray-100 dark:hover:bg-gray-800
-      transition
-    "
-        >
+            px-3 py-1.5 text-sm rounded-md
+            border border-gray-300 dark:border-gray-700
+            hover:bg-gray-100 dark:hover:bg-gray-800
+            transition
+          "
+          >
           GitHub
         </a>
 
@@ -90,13 +89,13 @@ export default function ProjectCard({
             href={live}
             target="_blank"
             className="
-        px-3 py-1.5 text-sm rounded-md
-        bg-blue-600 text-white
-        hover:bg-blue-700
-        dark:bg-blue-500 dark:hover:bg-blue-600
-        transition
-      "
-          >
+              px-3 py-1.5 text-sm rounded-md
+              bg-blue-600 text-white
+              hover:bg-blue-700
+              dark:bg-blue-500 dark:hover:bg-blue-600
+              transition
+            "
+            >
             Live Demo
           </a>
         )}
@@ -108,7 +107,7 @@ export default function ProjectCard({
           absolute inset-0
           opacity-0
           group-hover:opacity-100
-          transition-all duration-500 ease-out
+          transition-all duration-600 ease-out
 
           bg-gradient-to-r
           from-transparent via-white/25 to-transparent
