@@ -10,35 +10,35 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Personal Developer Portfolio",
+    description:
+      "A modern, responsive portfolio built with Next.js, TypeScript, Tailwind CSS, dark/light theme, animations, and SEO optimization.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Nodemailer",
+      "Framer Motion"
+    ],
+    github: "https://github.com/sunil0336/Portfolio",
+    live: "https://sunilrathod.vercel.app",
+    imageUrl: "/projects/portfolio.png" // or your saved image
+  },
+  {
     title: "Criticstaan",
-    description: "A movie review platform with user roles and ratings.",
-    techStack: ["React", "Node.js", "Express", "PostgreSQL"],
+    description: "A movie review platform with user roles, ratings, and secure authentication.",
+    techStack: ["React", "TailwindCSS", "Express", "MongoDB"],
     github: "https://github.com/sunil0336/MovieBuffs",
-    live : "https://criticstaan.vercel.app/",
+    live: "https://criticstaan.vercel.app/",
     imageUrl: "/projects/HomeScreen.png"
   },
   {
     title: "Password Manager",
-    description: "Secure password manager with encryption.",
-    techStack: ["React", "Node.js", "MongoDB"],
+    description: "A React and Tailwind CSS password manager that stores credentials in browser LocalStorage, featuring add/edit/delete functionality and a clean, responsive UI.",
+    techStack: ["React", "TailwindCSS", "MongoDB"],
     github: "https://github.com/yourname/password-manager",
-    live : "https://passwordmanager.com",
-    imageUrl: "/projects/HomeScreen.png"
+    live: undefined,
+    imageUrl: "/projects/pwdmanager.png"
   },
-  {
-    title: "Password Manager",
-    description: "Secure password manager with encryption.",
-    techStack: ["React", "Node.js", "MongoDB"],
-    github: "https://github.com/yourname/password-manager",
-    live : "https://passwordmanager.com",
-    imageUrl: "/projects/HomeScreen.png"
-  },
-  {
-    title: "Password Manager",
-    description: "Secure password manager with encryption.",
-    techStack: ["React", "Node.js", "MongoDB"],
-    github: "https://github.com/yourname/password-manager",
-    live : "https://passwordmanager.com",
-    imageUrl: "/projects/HomeScreen.png"
-  },
+  
 ];
