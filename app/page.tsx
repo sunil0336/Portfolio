@@ -1,12 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
 import { SiNextdotjs, SiMongodb, SiExpress, SiTypescript } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
+import Link from "next/link";
 
 export default function Home() {
-
   return (
     <main className="min-h-[75vh] max-w-4xl mx-auto px-4 flex flex-col justify-center space-y-6">
 
@@ -16,7 +15,8 @@ export default function Home() {
         <span className="opacity-90">Full Stack / MERN Developer</span>
       </h1>
 
-      <p className="text-gray-700 dark:text-gray-300 text-lg">
+      {/* 🔹 Strong light color + proper dark mode + smooth transition */}
+      <p className="text-lg transition-colors">
         <Typewriter
           words={[
             "I build scalable and user-focused web applications.",
@@ -32,7 +32,6 @@ export default function Home() {
         />
       </p>
 
-
       <div className="flex flex-wrap gap-2 pt-1">
         {[
           { name: "React", icon: <FaReact size={16} /> },
@@ -45,16 +44,15 @@ export default function Home() {
           <span
             key={tech.name}
             className="
-        flex items-center gap-2
-        px-3 py-1 text-sm rounded-full
-        border border-gray-300 dark:border-gray-700
-        bg-gray-100 text-gray-800
-        dark:bg-gray-800 dark:text-gray-200
-
-        transition-all duration-200
-        hover:scale-[1.02] hover:shadow-sm
-        dark:hover:shadow-[0_0_8px_rgba(255,255,255,0.08)]
-      "
+              flex items-center gap-2
+              px-3 py-1 text-sm rounded-full
+              border border-gray-300 dark:border-gray-700
+              bg-gray-100 text-gray-800
+              dark:bg-gray-800 dark:text-gray-200
+              transition-all duration-200
+              hover:scale-[1.02] hover:shadow-sm
+              dark:hover:shadow-[0_0_8px_rgba(255,255,255,0.08)]
+            "
           >
             {tech.icon}
             {tech.name}
@@ -62,21 +60,20 @@ export default function Home() {
         ))}
       </div>
 
-
       <div className="flex gap-4">
-        <a
+        <Link
           href="/projects"
           className="px-5 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
         >
           View Projects
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/contact"
           className="px-5 py-2 rounded-full border dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
         >
           Contact Me
-        </a>
+        </Link>
 
         <a
           href="https://drive.google.com/file/d/1YVfj7Rjf13dtsSzsl3OG42bLTKllHEPn/view?usp=drive_link"
@@ -94,4 +91,3 @@ export default function Home() {
     </main>
   );
 }
-
