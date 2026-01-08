@@ -13,7 +13,18 @@ export default function Navbar({ theme, setTheme }: Props) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // close menu on route change
+  // 🔹 Apply / remove dark mode on <html>
+  useEffect(() => {
+    const html = document.documentElement;
+
+    if (theme === "dark") {
+      html.classList.add("dark");
+    } else {
+      html.classList.remove("dark");
+    }
+  }, [theme]);
+
+  // 🔹 Close menu on route change
   useEffect(() => setOpen(false), [pathname]);
 
   const navLinks = [
@@ -25,9 +36,10 @@ export default function Navbar({ theme, setTheme }: Props) {
 
   const linkClass = (href: string) =>
     `px-3 py-1 rounded transition 
-     ${pathname === href
-       ? "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
-       : "hover:bg-gray-100 dark:hover:bg-gray-800"
+     ${
+       pathname === href
+         ? "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
+         : "hover:bg-gray-100 dark:hover:bg-gray-800"
      }`;
 
   return (
@@ -47,7 +59,7 @@ export default function Navbar({ theme, setTheme }: Props) {
 
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="px-3 py-1 border rounded"
+            className="px-3 py-1 border rounded transition"
           >
             {theme === "dark" ? "Light" : "Dark"}
           </button>
@@ -74,7 +86,7 @@ export default function Navbar({ theme, setTheme }: Props) {
 
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="px-3 py-1 border rounded"
+              className="px-3 py-1 border rounded transition"
             >
               {theme === "dark" ? "Light" : "Dark"}
             </button>
