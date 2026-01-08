@@ -70,7 +70,7 @@ export default function Home() {
 
         <Link
           href="/contact"
-          className="px-5 py-2 rounded-full border dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
+          className="px-5 py-2 rounded-full border dark:border-gray-700 hover:bg-gray-100 dark:hover:text-gray-100 dark:hover:bg-gray-800"
         >
           Contact Me
         </Link>
@@ -81,7 +81,7 @@ export default function Home() {
           className="
             px-5 py-2 rounded-full
             border border-gray-300 dark:border-gray-700
-            hover:bg-gray-100 dark:hover:bg-gray-800
+            hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-100
             transition
           "
         >
