@@ -13,7 +13,6 @@ export default function Navbar({ theme, setTheme }: Props) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // 🔹 Apply / remove dark mode on <html>
   useEffect(() => {
     const html = document.documentElement;
 
@@ -24,7 +23,6 @@ export default function Navbar({ theme, setTheme }: Props) {
     }
   }, [theme]);
 
-  // 🔹 Close menu on route change
   useEffect(() => setOpen(false), [pathname]);
 
   const navLinks = [
@@ -35,21 +33,17 @@ export default function Navbar({ theme, setTheme }: Props) {
   ];
 
   const linkClass = (href: string) =>
-    `px-3 py-1 rounded transition 
+    `px-3 py-1 rounded-full transition 
      ${
        pathname === href
-         ? "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
-         : "hover:bg-gray-100 dark:hover:bg-gray-800"
+         ? "bg-blue-100 text-blue-700 dark:bg-blue-500 dark:text-blue-100"
+         : "hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200"
      }`;
 
   return (
     <nav className="border-b dark:border-gray-700">
       <div className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
-
-        {/* Logo */}
-        <h1 className="font-bold text-lg">Sunil</h1>
-
-        {/* Desktop Menu */}
+        <h1 className="font-bold text-lg"><Link href="/" >Sunil</Link> </h1>
         <div className="hidden md:flex items-center gap-4">
           {navLinks.map(link => (
             <Link key={link.href} href={link.href} className={linkClass(link.href)}>
@@ -65,7 +59,6 @@ export default function Navbar({ theme, setTheme }: Props) {
           </button>
         </div>
 
-        {/* Mobile Hamburger */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden border rounded px-3 py-1"
@@ -74,7 +67,6 @@ export default function Navbar({ theme, setTheme }: Props) {
         </button>
       </div>
 
-      {/* Mobile Slide-down Menu */}
       {open && (
         <div className="md:hidden border-t dark:border-gray-700 animate-slide">
           <div className="flex flex-col p-3 gap-2">
