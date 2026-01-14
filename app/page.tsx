@@ -50,7 +50,7 @@ export default function Home() {
               bg-gray-100 text-gray-800
               dark:bg-gray-800 dark:text-gray-200
               transition-all duration-200
-              hover:scale-[1.02] hover:shadow-sm
+              hover:scale-[1.02] hover:shadow-sm hover:bg-gray-600
               dark:hover:shadow-[0_0_8px_rgba(255,255,255,0.08)]
             "
           >

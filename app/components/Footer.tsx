@@ -5,9 +5,7 @@ export default function Footer() {
   return (
     <footer className="mt-12 border-t border-gray-300 dark:border-gray-700">
       <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col items-center gap-3
-        text-gray-700 dark:text-gray-300">
-
-        {/* Social row + Resume icon */}
+        md:flex-row md:justify-between">
         <div className="flex items-center gap-3">
           <SocialLinks size="sm" />
 
@@ -17,19 +15,19 @@ export default function Footer() {
             className="
               flex items-center gap-2 px-3 py-1.5 text-sm
               rounded-full
-              border border-gray-300 dark:border-gray-700
-              bg-white dark:bg-gray-900
-              hover:bg-gray-100 dark:hover:bg-gray-800
+              border bg-white dark:bg-gray-900 dark:border-gray-700
+              hover:bg-blue-50 dark:hover:bg-blue-900/30
+              hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300
               transition
             "
           >
             <FaRegFilePdf size={13} />
             Resume
           </a>
-            
+
         </div>
 
-        <p className="text-xs text-gray-700 dark:text-gray-300">
+        <p className="text-xs">
           © {new Date().getFullYear()} Sunil Rathod — Portfolio
         </p>
       </div>
