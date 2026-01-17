@@ -75,8 +75,7 @@ export default function ProjectCard({
       ))}
     </div>
 
-    {/* 🔹 Push buttons to the bottom for equal alignment */}
-    <div className="flex gap-3 mt-4 pt-2 mt-auto">
+    <div className="flex gap-3 pt-2 mt-auto">
       <a
         href={github}
         target="_blank"

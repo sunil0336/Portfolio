@@ -10,7 +10,15 @@ export default function Home() {
     <main className="min-h-[75vh] max-w-4xl mx-auto px-4 flex flex-col justify-center space-y-6">
 
       <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-        Hi, I’m <span className="text-blue-600 dark:text-blue-400">Sunil Rathod</span>
+        Hi, I’m <span className="
+          bg-gradient-to-r 
+          from-blue-600 via-indigo-500 to-purple-500
+          dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400
+          bg-clip-text text-transparent
+        ">
+          Sunil Rathod
+        </span>
+
         <br />
         <span className="opacity-90">Full Stack / MERN Developer</span>
       </h1>
@@ -63,7 +71,15 @@ export default function Home() {
       <div className="flex gap-4">
         <Link
           href="/projects"
-          className="px-5 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+          className="
+            px-5 py-2 rounded-full text-white
+            bg-gradient-to-r from-blue-600 to-indigo-600
+            hover:from-blue-700 hover:to-indigo-700
+            dark:from-blue-500 dark:to-indigo-500
+            dark:hover:from-blue-600 dark:hover:to-indigo-600
+            transition
+          "
+
         >
           View Projects
         </Link>
