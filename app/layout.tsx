@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   title: "Sunil Rathod — Full Stack / MERN Developer",
   description:
     "Full Stack Developer specializing in React, Next.js, Express.js and MongoDB. Passionate about building scalable, user-focused web applications.",
+
+  verification: {
+    google: "1JpJg4-zWgAfb4y6Mb0S5NbtrjS5oeK6PfsYofbJeE8",
+  },
+
   openGraph: {
     title: "Sunil Rathod — Full Stack / MERN Developer",
     description:
@@ -55,7 +60,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
           <PageTransition>
-          {children}
+            {children}
           </PageTransition>
           <Footer />
         </Providers>
