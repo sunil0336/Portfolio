@@ -41,7 +41,7 @@ export default function Navbar({ theme, setTheme }: Props) {
      }`;
 
   return (
-    <nav className="border-b dark:border-gray-700">
+    <nav className="border-b dark:border-gray-700 font-semibold">
       <div className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
         <h1 className="font-bold text-lg"><Link href="/" >Sunil</Link> </h1>
         <div className="hidden md:flex items-center gap-4">

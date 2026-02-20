@@ -15,7 +15,7 @@ export default function AboutContent() {
       <div className="space-y-3">
         <h2 className="text-xl font-semibold">Who I Am</h2>
         <Reveal>
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p className="leading-relaxed">
           I’m Sunil Rathod — a Full Stack Developer and M.Sc. Computer Science
           student at Fergusson College, Pune. I focus on building scalable and
           user-focused web applications using React, Next.js, Express.js and
@@ -32,7 +32,7 @@ export default function AboutContent() {
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <h3 className="font-medium mb-2">Frontend</h3>
-            <ul className="list-disc ml-5 text-gray-700 dark:text-gray-300">
+            <ul className="list-disc ml-5">
               <li>React.js, Next.js, Tailwind CSS</li>
               <li>JavaScript, HTML, CSS</li>
             </ul>
@@ -40,21 +40,21 @@ export default function AboutContent() {
 
           <div>
             <h3 className="font-medium mb-2">Backend & APIs</h3>
-            <ul className="list-disc ml-5 text-gray-700 dark:text-gray-300">
+            <ul className="list-disc ml-5">
               <li>Express.js, REST APIs</li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-medium mb-2">Databases</h3>
-            <ul className="list-disc ml-5 text-gray-700 dark:text-gray-300">
+            <ul className="list-disc ml-5">
               <li>MySQL, MongoDB</li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-medium mb-2">Tools</h3>
-            <ul className="list-disc ml-5 text-gray-700 dark:text-gray-300">
+            <ul className="list-disc ml-5">
               <li>Git & GitHub, Postman</li>
             </ul>
           </div>
@@ -87,7 +87,7 @@ export default function AboutContent() {
                 (2024 — 2026)
               </span>
             </h3>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
+            <p className="text-sm">
               Postgraduate specialization in advanced computing, software design,
               and modern web application development.
             </p>
@@ -113,7 +113,7 @@ export default function AboutContent() {
                 (2021 — 2024)
               </span>
             </h3>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
+            <p className="text-sm">
               Completed foundation in computer science, problem-solving,
               programming fundamentals, and software engineering concepts.
             </p>
@@ -135,7 +135,7 @@ export default function AboutContent() {
       {/* Currently Learning */}
       <div className="space-y-2">
         <h2 className="text-xl font-semibold">Currently Learning</h2>
-        <p className="text-gray-700 dark:text-gray-300">
+        <p className="">
           TypeScript best practices, backend architecture, API security and
           scalable MERN + Next.js application design.
         </p>

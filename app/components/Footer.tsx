@@ -27,7 +27,7 @@ export default function Footer() {
 
         </div>
 
-        <p className="text-xs">
+        <p className="text-xs font-medium">
           © {new Date().getFullYear()} Sunil Rathod — Portfolio
         </p>
       </div>

@@ -41,7 +41,7 @@ export default function SocialLinks({ size = "md" }: Props) {
     },
     {
       label: "Instagram",
-      href: "https://instagram.com/sunil0336",
+      href: "https://instagram.com/sunilrathod036",
       icon: <Instagram size={iconSize} />,
     },
   ];

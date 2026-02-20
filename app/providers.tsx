@@ -13,7 +13,7 @@ export default function Providers({
   return (
     <div
       className={
-        theme === "dark" ? "dark bg-gray-900 text-white min-h-screen" : "bg-white text-black min-h-screen"
+        theme === "dark" ? "dark bg-gradient-to-br from-[#020617] via-[#020617] to-[#101828] text-white min-h-screen" : "from-[#e0e7ff] via-[#eef2ff] to-[#f5f3ff] text-black min-h-screen"
       }
     >
       <Navbar theme={theme} setTheme={setTheme} />
