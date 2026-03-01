@@ -18,6 +18,8 @@ export default function ContactPage() {
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -40,9 +42,6 @@ export default function ContactPage() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,82 +68,95 @@ export default function ContactPage() {
     }
   };
 
-
   return (
-    <section className="min-h-screen max-w-xl mx-auto px-4 flex flex-col justify-center space-y-8">
+    <section className="max-w-5xl mx-auto px-4 py-20 space-y-12">
+      {/* Heading */}
       <Reveal>
-      <h1 className="text-3xl font-bold text-center">Contact</h1>
+        <h1 className="text-3xl font-bold text-center">Contact</h1>
       </Reveal>
-      
+
+      {/* Content */}
       <Reveal>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <input
-            name="name"
-            placeholder="Your name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full border rounded px-3 py-2 "
-          />
-          {errors.name && (
-            <p className="text-sm text-red-500">{errors.name}</p>
-          )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          {/* Left - SVG */}
+          <div className="flex justify-center">
+            <img
+              src="/mailsent.svg"
+              alt="Contact illustration"
+              className="w-full max-w-sm"
+            />
+          </div>
+
+          {/* Right - Form */}
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <input
+                name="name"
+                placeholder="Your name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full border rounded px-3 py-2 placeholder:text-gray-500"
+              />
+              {errors.name && (
+                <p className="text-sm text-red-500 mt-1">{errors.name}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full border rounded px-3 py-2 placeholder:text-gray-500"
+              />
+              {errors.email && (
+                <p className="text-sm text-red-500 mt-1">{errors.email}</p>
+              )}
+            </div>
+
+            <div>
+              <textarea
+                name="message"
+                rows={5}
+                placeholder="Your message..."
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full border rounded px-3 py-2 placeholder:text-gray-500"
+              />
+              {errors.message && (
+                <p className="text-sm text-red-500 mt-1">{errors.message}</p>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className="w-full border rounded py-2 font-medium disabled:opacity-60"
+              disabled={loading}
+            >
+              {loading ? "Submitting..." : "Send Message"}
+            </button>
+
+            {status === "success" && (
+              <p className="text-green-600 text-sm">
+                Message sent successfully.
+              </p>
+            )}
+
+            {status === "error" && (
+              <p className="text-red-600 text-sm">
+                Something went wrong. Please try again.
+              </p>
+            )}
+          </form>
         </div>
-
-        <div>
-          <input
-            name="email"
-            type="email"
-            placeholder="you@example.com"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full border rounded px-3 py-2"
-          />
-          {errors.email && (
-            <p className="text-sm text-red-500">{errors.email}</p>
-          )}
-        </div>
-
-        <div>
-          <textarea
-            name="message"
-            rows={5}
-            placeholder="Your message..."
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full border rounded px-3 py-2"
-          />
-          {errors.message && (
-            <p className="text-sm text-red-500">{errors.message}</p>
-          )}
-        </div>
-
-        <button
-          type="submit"
-          className="w-full border rounded py-2 font-medium"
-          disabled={loading}
-        >
-          {loading ? "Submitting..." : "Send Message"}
-        </button>
-
-        {status === "success" && (
-          <p className="text-green-600 text-sm mt-2">
-            Message sent successfully.
-          </p>
-        )}
-
-        {status === "error" && (
-          <p className="text-red-600 text-sm mt-2">
-            Something went wrong. Please try again.
-          </p>
-        )}
-
-      </form>
       </Reveal>
-      <div className="flex justify-center">
+
+      {/* Social Links */}
+      <div className="flex justify-center pt-6">
         <SocialLinks size="lg" />
       </div>
     </section>
   );
 }
-
