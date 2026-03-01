@@ -21,21 +21,8 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
   <div
-    className="
-      group p-3
-      relative overflow-hidden
-      rounded-xl border
-      bg-white dark:bg-gray-900
-      border-gray-300 dark:border-gray-700
-
-      shadow-sm
-      hover:shadow-lg
-      hover:border-blue-400 dark:hover:border-blue-500
-      hover:scale-[1.01]
-      hover:-translate-y-[3px]
-      transition-all duration-300
-
-      flex flex-col h-full   /* 🔹 Equal height */
+    className="group p-3 relative overflow-hidden rounded-xl border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-lg hover:border-blue-400 dark:hover:border-blue-500 hover:scale-[1.01] hover:-translate-y-[3px] transition-all duration-300 
+    flex flex-col h-full   /* 🔹 Equal height */
     "
   >
 
@@ -55,7 +42,7 @@ export default function ProjectCard({
     {/* 🔹 Clamp long descriptions so cards stay same height */}
     <p 
     title={description}
-    className="text-sm text-gray-700 dark:text-gray-300 mt-1 line-clamp-3">
+    className="text-sm mt-1 line-clamp-3">
       {description}
     </p>
 
